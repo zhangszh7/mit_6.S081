@@ -33,6 +33,8 @@ xv6 提供的system calls 如下表：
 
 关于以上的系统调用，可以联系xv6的shell程序，阅读main片段（**/user/sh.c:145**）：
 
+**1.2 **
+
 
 
 
