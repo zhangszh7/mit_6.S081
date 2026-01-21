@@ -28,15 +28,13 @@ Q: what's the difference between `exit` and `return` ？
 
 ### 1.1 Process & memory
 
-xv6 提供的system calls 如下表：
+- xv6 提供的system calls 如下表：
 <img src="../assets/L01_Introduction_2026-01-19-16-44-45.png" width="80%" align="center" />
 
 - process：拥有一个 user-space memory 以及一个 state（由kernel维护）；
 - `int fork()`: 创建子进程，复制父进程的内存空间；return PID
 - `int wait(int *status)`：传入的是一个指针类型；`int exit(int status)`：(status) 0表示成功，1表示失败
 - `int exec(char *file, char *argv[])`：大部分执行程序会忽略 argv[0](一般表示命令名)
-
-关于以上的系统调用，可以联系xv6的shell程序，阅读main片段（**/user/sh.c:145**）：
 
 ### 1.2 I/O & file descriptors
 
@@ -60,7 +58,7 @@ pipe(p); // p[0] for reading, p[1] for writing
 ```
 
 - A cmd consists of  white-spaces, sub-cmds and different symbols(like `|`: pipeline, `>`: redirection), e.g., `grep pattern test.txt | wc -l`.
-1. the shell gets the cmd and stores it in a **tree** structure; (ignores the white space and labels the others with `EXEC`, `REDIR`, `PIPE`...).
-2. one pipeline   <=>  three processes: one parent(the interior process), two childs(left & right), just like the **'tree'**.
+  1. the shell gets the cmd and stores it in a **tree** structure; (ignores the white space and labels the others with `EXEC`, `REDIR`, `PIPE`...).
+  2. one pipeline   <=>  three processes: one parent(the interior process), two childs(left & right), just like the **'tree'**.
 
 ### 1.4 File 
