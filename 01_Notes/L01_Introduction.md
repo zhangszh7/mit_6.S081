@@ -40,26 +40,26 @@ xv6 提供的system calls 如下表：
 
 ### 1.2 I/O & file descriptors
 
-a fd can refer to a file, a device or a console, etc.
+- a fd can refer to a file, a device or a console, etc.
 
-one process with **one fd table**(the fd table matters). Obviously, the fd talbe must include fds, referred objects and flags, e.g., (1, file, readonly).
+- one process with **one fd table**(the fd table matters). Obviously, the fd talbe must include fds, referred objects and flags, e.g., (1, file, readonly).
 
-you can release a fd with the system call `close()`.
+- you can release a fd with the system call `close()`.
 
-one fd with one offset; `read/write` n from the offset; then offset += n.
+- one fd with one offset; `read/write` n from the offset; then offset += n.
 
-with `dup()`, two different fds can refer to the same object and they share the offset; `fork()` copies **the fd table** from the parent, and `exec()` also preserves **the fd table**;
+- with `dup()`, two different fds can refer to the same object and they share the offset; `fork()` copies **the fd table** from the parent, and `exec()` also preserves **the fd table**;
 
 ### 1.3 Pipes
 
-A *pipe* is **a small kernel buffer** exposed to processes as a pair of file descriptors, one for reading and one for writing.
+- A *pipe* is **a small kernel buffer** exposed to processes as a pair of file descriptors, one for reading and one for writing.
 
 ```C
 int p[2];
 pipe(p); // p[0] for reading, p[1] for writing
 ```
 
-A cmd consists of  white-spaces, sub-cmds and different symbols(like `|`: pipeline, `>`: redirection), e.g., `grep pattern test.txt | wc -l`.
+- A cmd consists of  white-spaces, sub-cmds and different symbols(like `|`: pipeline, `>`: redirection), e.g., `grep pattern test.txt | wc -l`.
 1. the shell gets the cmd and stores it in a **tree** structure; (ignores the white space and labels the others with `EXEC`, `REDIR`, `PIPE`...).
 2. one pipeline   <=>  three processes: one parent(the interior process), two childs(left & right), just like the **'tree'**.
 
