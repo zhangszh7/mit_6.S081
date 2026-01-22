@@ -4,3 +4,5 @@
 1-19: 观看Unix短片，阅读chapter 1.1
 
 1-20：状态不是很好，休息一天
+
+1-21 & 1-22: Lecture1 + lab 1：sleep
