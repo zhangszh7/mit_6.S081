@@ -5,4 +5,8 @@
 
 1-20：状态不是很好，休息一天
 
-1-21 & 1-22: Lecture1 + lab 1：sleep
+1-21 & 1-22: Lecture1 + lab 1: sleep
+
+1-23 & 1-24: lab 1: pingpong + primes
+
+1-25: lab 1: find
