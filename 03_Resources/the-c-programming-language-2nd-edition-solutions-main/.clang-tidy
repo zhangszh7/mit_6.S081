@@ -1,0 +1,10 @@
+---
+# Minimal checks for K&R C code style
+# Only enforce one variable per declaration for readability 
+Checks: >
+  -*,
+  readability-isolate-declaration
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: 'file'

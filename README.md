@@ -7,6 +7,8 @@
 
 1-21 & 1-22: Lecture1 + lab 1: sleep
 
-1-23 & 1-24: lab 1: pingpong + primes
+1-23 & 1-24: lab1: pingpong + primes
 
-1-25: lab 1: find
+1-25: lab1: find
+
+1-26 ~ 2-2: Lecture2 + lab1 + lab2 
